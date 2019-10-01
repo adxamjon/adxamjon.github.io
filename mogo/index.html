@@ -19,10 +19,23 @@
 								<nav class="nav">
 										<a class=" nav__link" href= "#about">About</a>
 										<a class=" nav__link" href= "#services">Service</a>
-										<a class=" nav__link" href= "#">Blog</a>
-										<a class=" nav__link" href= "#">Work</a>
-										<a class=" nav__link" href= "#">Contact</a>	
+										<a class=" nav__link" href= "#blog">Blog</a>
+										<a class=" nav__link" href= "#work">Work</a>
+										<a class=" nav__link" href= "#contact">Contact</a>	
 								</nav>
+
+								
+								<a class="menu"></a>
+								<div class="menu__link">
+										<a id="menu__close">X</a>
+									<a class=" nav__link--menu" href= "#about">About</a>
+										<a class=" nav__link--menu" href= "#services">Service</a>
+										<a class=" nav__link--menu" href= "#blog">Blog</a>
+										<a class=" nav__link--menu" href= "#work">Work</a>
+										<a class=" nav__link--menu" href= "#contact">Contact</a>
+
+								</div>
+								
 						</div>	
 				</div>		
 
@@ -41,8 +54,8 @@
 				
 		</div>
 	</div>
-
-	<section class="section"><a name="about"></a>
+<a name="about"></a>
+	<section class="section">
 		<div class="container">
 			<div class="section__header">
 				<h3 class="section__suptitle">What we do</h3>
@@ -105,8 +118,8 @@
 		</div>
 	</div>
 		
-	
-	<section class="section"><a name="services"></a>
+	<a name="services"></a>
+	<section class="section">
 		<div class="container">
 			<div class="section__header">
 				<h3 class="section__suptitle">We work with</h3>
@@ -254,7 +267,7 @@
 		</div>
 	</section>
 
-
+	<a name="blog"></a>
 	<section class="section">
 		<div class="container">
 			<div class="section__header">
@@ -338,7 +351,7 @@
 		
 	</div>
 </section>
-
+<a name="work"></a>
 <section class="section section--work">
 	
 		<div class="section__header">
@@ -533,7 +546,7 @@
 				<h3 class="section__suptitle">Our stories</h3>
 				<h2 class="section__title">Latest blog</h2>
 			</div>
-
+			<a name="contact"></a>
 			<div class="blog">
 				<div class="blog__item">
 					<div class="blogs__img">
@@ -656,6 +669,8 @@
 		 
 		sectionGray2[0].style.height = slidesHeight2 + 160 + 'px' ;
 		console.log(slidesHeight2);
+
+
 	}
 
 	function heightSlide(){
@@ -738,6 +753,33 @@
 
 	heightSlide2();
 //.......................................................................................
+
+
+
+// ............menu...................
+
+var menuLink = document.getElementsByClassName("menu__link")[0];
+var menu = document.getElementsByClassName("menu")[0];
+var header = document.getElementsByClassName("header")[0];
+
+menu.onclick = function(){
+	console.log(menuLink.style.right);
+		menuLink.style.right = 0 + 'px';
+		this.style.display = "none"
+		console.log("menu");
+}		
+
+document.getElementById("menu__close").onclick = function(){
+	menu.style.display = "block";
+	
+	menuLink.style.right = -180 + "px";
+}
+
+document.onscroll = function (){
+	header.classList.add("fixed");
+}
+
+// .......................................
 	
 </script>
 </body>
